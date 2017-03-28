@@ -20,7 +20,8 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_jugar" />
+    <include layout="@layout/content_jugar"
+        android:layout_width="357dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -36,21 +37,71 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text=""
+                android:text="HOLA"
                 android:textColor="@color/colorAccent"
                 android:textSize="20dp"
                 android:typeface="monospace" />
 
-            <GridLayout
+            <TableLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/etiquetaNombre"
-                android:columnCount="3"
-                android:rowCount="3">
+                android:padding="30dp"
+                android:layout_marginTop="20dp">
+                <TableRow android:background="#128675">
+                    <ImageView
+                        android:id="@+id/celda1"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        app:srcCompat="@drawable/square" />
+                    <ImageView
+                        android:id="@+id/celda2"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        app:srcCompat="@drawable/square" />
+                    <ImageView
+                        android:id="@+id/celda3"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        app:srcCompat="@drawable/square" />
+                </TableRow>
+                <TableRow android:background="#128675">
+                    <ImageView
+                        android:id="@+id/celda4"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        app:srcCompat="@drawable/square" />
+                    <ImageView
+                        android:id="@+id/celda5"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        app:srcCompat="@drawable/square" />
+                    <ImageView
+                        android:id="@+id/celda6"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        app:srcCompat="@drawable/square" />
+                </TableRow>
+                <TableRow android:background="#128675">
+                    <ImageView
+                        android:id="@+id/celda7"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        app:srcCompat="@drawable/square" />
+                    <ImageView
+                        android:id="@+id/celda8"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        app:srcCompat="@drawable/square" />
+                    <ImageView
+                        android:id="@+id/celda9"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        app:srcCompat="@drawable/square" />
+                </TableRow>
 
-                <ImageButton />
-            </GridLayout>
+            </TableLayout>
+
+
         </RelativeLayout>
 
 
