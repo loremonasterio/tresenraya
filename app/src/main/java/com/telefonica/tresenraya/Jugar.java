@@ -3,6 +3,7 @@ package com.telefonica.tresenraya;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -19,29 +20,23 @@ import java.security.*;
 
 public class Jugar extends AppCompatActivity {
 
+    private String nombre;
+    private boolean sonido;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jugar);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });*/
         SharedPreferences sp = this.getSharedPreferences("preferencias", Context.MODE_PRIVATE);
         TextView nombreJugador = (TextView) this.findViewById(R.id.etiquetaNombre);
-        String nombre = sp.getString("Nombre","");
+        nombre = sp.getString("Nombre","");
+        sonido = sp.getBoolean("Sonido",true);
         nombreJugador.setText("A jugar "+nombre+"!!!");
     }
 
     public void salir(){
-        SharedPreferences sp = this.getSharedPreferences("temperaturas", Context.MODE_PRIVATE);
+        SharedPreferences sp = this.getSharedPreferences("preferencias", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
         editor.clear();
         editor.commit();
@@ -53,6 +48,11 @@ public class Jugar extends AppCompatActivity {
         ImageView img = (ImageView) findViewById(v.getId());
         img.setImageResource(R.drawable.cruz);
         img.setClickable(false);
+        if(sonido){
+            MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.cruz);
+            mp.start();
+            System.out.println("SUENA");
+        }
         ponerCirculo(img.getTag().toString());
     }
 
@@ -111,12 +111,12 @@ public class Jugar extends AppCompatActivity {
                 }
                 break;
             case "celda5":
-                ImageView img9 = (ImageView) findViewById(R.id.celda6);
+                ImageView img9 = (ImageView) findViewById(R.id.celda9);
                 if(img9.isClickable()){
                     img9.setImageResource(R.drawable.circulo);
                     img9.setClickable(false);
                 }else{
-                    ImageView img10 = (ImageView) findViewById(R.id.celda8);
+                    ImageView img10 = (ImageView) findViewById(R.id.celda7);
                     if(img10.isClickable()){
                         img10.setImageResource(R.drawable.circulo);
                         img10.setClickable(false);
@@ -193,7 +193,14 @@ public class Jugar extends AppCompatActivity {
                 salir();
 
                 return true;
-
+            case R.id.menu_configuracion:
+                Intent intent = new Intent(this, Configuracion.class);
+                this.startActivity(intent);
+                return true;
+            case R.id.menu_jugar:
+                Intent intent2 = new Intent(this, Jugar.class);
+                this.startActivity(intent2);
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
