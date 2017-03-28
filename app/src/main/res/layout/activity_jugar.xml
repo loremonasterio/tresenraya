@@ -47,56 +47,83 @@
                 android:layout_height="match_parent"
                 android:padding="30dp"
                 android:layout_marginTop="20dp">
-                <TableRow android:background="#128675">
+                <TableRow>
                     <ImageView
                         android:id="@+id/celda1"
+                        android:tag="celda1"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        app:srcCompat="@drawable/square" />
+                        app:srcCompat="@drawable/square"
+                        android:clickable="true"
+                        android:onClick="ponerCruz"/>
                     <ImageView
                         android:id="@+id/celda2"
+                        android:tag="celda2"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        app:srcCompat="@drawable/square" />
+                        app:srcCompat="@drawable/square"
+                        android:clickable="true"
+                        android:onClick="ponerCruz"/>
                     <ImageView
                         android:id="@+id/celda3"
+                        android:tag="celda3"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        app:srcCompat="@drawable/square" />
+                        app:srcCompat="@drawable/square"
+                        android:clickable="true"
+                        android:onClick="ponerCruz"/>
                 </TableRow>
-                <TableRow android:background="#128675">
+                <TableRow>
                     <ImageView
                         android:id="@+id/celda4"
+                        android:tag="celda4"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        app:srcCompat="@drawable/square" />
+                        app:srcCompat="@drawable/square"
+                        android:clickable="true"
+                        android:onClick="ponerCruz"/>
                     <ImageView
                         android:id="@+id/celda5"
+                        android:tag="celda5"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        app:srcCompat="@drawable/square" />
+                        app:srcCompat="@drawable/square"
+                        android:clickable="true"
+                        android:onClick="ponerCruz"/>
                     <ImageView
                         android:id="@+id/celda6"
+                        android:tag="celda6"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        app:srcCompat="@drawable/square" />
+                        app:srcCompat="@drawable/square"
+                        android:clickable="true"
+                        android:onClick="ponerCruz"/>
                 </TableRow>
-                <TableRow android:background="#128675">
+                <TableRow>
                     <ImageView
                         android:id="@+id/celda7"
+                        android:tag="celda7"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        app:srcCompat="@drawable/square" />
+                        app:srcCompat="@drawable/square"
+                        android:clickable="true"
+                        android:onClick="ponerCruz"/>
                     <ImageView
                         android:id="@+id/celda8"
+                        android:tag="celda8"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        app:srcCompat="@drawable/square" />
+                        app:srcCompat="@drawable/square"
+                        android:clickable="true"
+                        android:onClick="ponerCruz"/>
                     <ImageView
                         android:id="@+id/celda9"
+                        android:tag="celda9"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        app:srcCompat="@drawable/square" />
+                        app:srcCompat="@drawable/square"
+                        android:clickable="true"
+                        android:onClick="ponerCruz"/>
                 </TableRow>
 
             </TableLayout>

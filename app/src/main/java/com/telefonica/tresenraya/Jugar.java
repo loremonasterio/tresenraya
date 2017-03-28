@@ -12,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.security.*;
@@ -46,6 +47,135 @@ public class Jugar extends AppCompatActivity {
         editor.commit();
         Intent intent = new Intent(this, Principal.class);
         this.startActivity(intent);
+    }
+
+    public void ponerCruz(View v){
+        ImageView img = (ImageView) findViewById(v.getId());
+        img.setImageResource(R.drawable.cruz);
+        img.setClickable(false);
+        ponerCirculo(img.getTag().toString());
+    }
+
+    public void ponerCirculo(String tag){
+        switch (tag){
+            case "celda1":
+                ImageView img = (ImageView) findViewById(R.id.celda3);
+                if(img.isClickable()){
+                    img.setImageResource(R.drawable.circulo);
+                    img.setClickable(false);
+                }else{
+                    ImageView img2 = (ImageView) findViewById(R.id.celda9);
+                    if(img2.isClickable()){
+                        img2.setImageResource(R.drawable.circulo);
+                        img2.setClickable(false);
+                    }
+                }
+                break;
+            case "celda2":
+                ImageView img3 = (ImageView) findViewById(R.id.celda3);
+                if(img3.isClickable()){
+                    img3.setImageResource(R.drawable.circulo);
+                    img3.setClickable(false);
+                }else{
+                    ImageView img4 = (ImageView) findViewById(R.id.celda5);
+                    if(img4.isClickable()){
+                        img4.setImageResource(R.drawable.circulo);
+                        img4.setClickable(false);
+                    }
+                }
+                break;
+            case "celda3":
+                ImageView img5 = (ImageView) findViewById(R.id.celda2);
+                if(img5.isClickable()){
+                    img5.setImageResource(R.drawable.circulo);
+                    img5.setClickable(false);
+                }else{
+                    ImageView img6 = (ImageView) findViewById(R.id.celda6);
+                    if(img6.isClickable()){
+                        img6.setImageResource(R.drawable.circulo);
+                        img6.setClickable(false);
+                    }
+                }
+                break;
+            case "celda4":
+                ImageView img7 = (ImageView) findViewById(R.id.celda5);
+                if(img7.isClickable()){
+                    img7.setImageResource(R.drawable.circulo);
+                    img7.setClickable(false);
+                }else{
+                    ImageView img8 = (ImageView) findViewById(R.id.celda7);
+                    if(img8.isClickable()){
+                        img8.setImageResource(R.drawable.circulo);
+                        img8.setClickable(false);
+                    }
+                }
+                break;
+            case "celda5":
+                ImageView img9 = (ImageView) findViewById(R.id.celda6);
+                if(img9.isClickable()){
+                    img9.setImageResource(R.drawable.circulo);
+                    img9.setClickable(false);
+                }else{
+                    ImageView img10 = (ImageView) findViewById(R.id.celda8);
+                    if(img10.isClickable()){
+                        img10.setImageResource(R.drawable.circulo);
+                        img10.setClickable(false);
+                    }
+                }
+                break;
+            case "celda6":
+                ImageView img11 = (ImageView) findViewById(R.id.celda5);
+                if(img11.isClickable()){
+                    img11.setImageResource(R.drawable.circulo);
+                    img11.setClickable(false);
+                }else{
+                    ImageView img12 = (ImageView) findViewById(R.id.celda9);
+                    if(img12.isClickable()){
+                        img12.setImageResource(R.drawable.circulo);
+                        img12.setClickable(false);
+                    }
+                }
+                break;
+            case "celda7":
+                ImageView img13 = (ImageView) findViewById(R.id.celda8);
+                if(img13.isClickable()){
+                    img13.setImageResource(R.drawable.circulo);
+                    img13.setClickable(false);
+                }else{
+                    ImageView img14 = (ImageView) findViewById(R.id.celda4);
+                    if(img14.isClickable()){
+                        img14.setImageResource(R.drawable.circulo);
+                        img14.setClickable(false);
+                    }
+                }
+                break;
+            case "celda8":
+                ImageView img15 = (ImageView) findViewById(R.id.celda9);
+                if(img15.isClickable()){
+                    img15.setImageResource(R.drawable.circulo);
+                    img15.setClickable(false);
+                }else{
+                    ImageView img16 = (ImageView) findViewById(R.id.celda5);
+                    if(img16.isClickable()){
+                        img16.setImageResource(R.drawable.circulo);
+                        img16.setClickable(false);
+                    }
+                }
+                break;
+            case "celda9":
+                ImageView img17 = (ImageView) findViewById(R.id.celda8);
+                if(img17.isClickable()){
+                    img17.setImageResource(R.drawable.circulo);
+                    img17.setClickable(false);
+                }else{
+                    ImageView img18 = (ImageView) findViewById(R.id.celda6);
+                    if(img18.isClickable()){
+                        img18.setImageResource(R.drawable.circulo);
+                        img18.setClickable(false);
+                    }
+                }
+                break;
+        }
     }
 
     @Override
