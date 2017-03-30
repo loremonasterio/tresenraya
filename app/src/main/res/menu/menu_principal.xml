@@ -3,9 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.telefonica.tresenraya.Principal">
     <item
-        android:id="@+id/menu_principal"
+        android:id="@+id/menu_configuracion"
         android:orderInCategory="100"
-        android:title="Principal"
+        android:title="Configuracion"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_jugar"
+        android:orderInCategory="100"
+        android:title="Jugar"
         app:showAsAction="never" />
     <item
         android:id="@+id/menu_salir"

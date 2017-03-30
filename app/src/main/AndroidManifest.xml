@@ -22,6 +22,10 @@
         <activity
             android:name=".Jugar"
             android:label="@string/title_activity_jugar"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Configuracion"
+            android:label="@string/title_activity_configuracion"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
