@@ -30,11 +30,15 @@ public class Configuracion extends AppCompatActivity {
         SharedPreferences sp = this.getSharedPreferences("preferencias", Context.MODE_PRIVATE);
         CheckBox sonido = (CheckBox)findViewById(R.id.checkSonido);
         CheckBox maquina = (CheckBox)findViewById(R.id.checkMaquina);
+        CheckBox partida = (CheckBox)findViewById(R.id.checkGuardar);
         if(sp.getBoolean("Sonido",false)){
             sonido.setChecked(true);
         }
         if(sp.getBoolean("Maquina",false)){
             maquina.setChecked(true);
+        }
+        if(sp.getBoolean("Partida",false)){
+            partida.setChecked(true);
         }
 
     }
@@ -52,7 +56,6 @@ public class Configuracion extends AppCompatActivity {
             case R.id.menu_salir:
                 // EITHER CALL THE METHOD HERE OR DO THE FUNCTION DIRECTLY
                 salir();
-
                 return true;
             case R.id.menu_configuracion:
                 Intent intent = new Intent(this, Configuracion.class);
@@ -61,6 +64,10 @@ public class Configuracion extends AppCompatActivity {
             case R.id.menu_jugar:
                 Intent intent2 = new Intent(this, Jugar.class);
                 this.startActivity(intent2);
+                return true;
+            case R.id.menu_ranking:
+                Intent intent3 = new Intent(this, Ranking.class);
+                this.startActivity(intent3);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -98,6 +105,19 @@ public class Configuracion extends AppCompatActivity {
             editor.commit();
         }else{
             editor.putBoolean("Maquina",false);
+            editor.commit();
+        }
+    }
+
+    public void guardarPartida(View v){
+        CheckBox partida = (CheckBox)findViewById(R.id.checkGuardar);
+        SharedPreferences sp = this.getSharedPreferences("preferencias", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sp.edit();
+        if(partida.isChecked()){
+            editor.putBoolean("Partida",true);
+            editor.commit();
+        }else{
+            editor.putBoolean("Partida",false);
             editor.commit();
         }
     }

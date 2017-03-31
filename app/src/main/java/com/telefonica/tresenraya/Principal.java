@@ -41,5 +41,10 @@ public class Principal extends AppCompatActivity {
         this.startActivity(intent);
     }
 
+    public void ranking(View v){
+        Intent intent = new Intent(this, Ranking.class);
+        this.startActivity(intent);
+    }
+
 
 }

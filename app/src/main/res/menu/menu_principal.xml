@@ -13,6 +13,11 @@
         android:title="Jugar"
         app:showAsAction="never" />
     <item
+        android:id="@+id/menu_ranking"
+        android:orderInCategory="100"
+        android:title="Ranking"
+        app:showAsAction="never" />
+    <item
         android:id="@+id/menu_salir"
         android:orderInCategory="100"
         android:title="Salir"
